@@ -61,6 +61,9 @@ public class MixIngredients : MonoBehaviour
                 }
             }
         }
+
+
+        print("Wrong" + firstIngredient + secondIngredient + thirdIngredient);
     }
   
 }
