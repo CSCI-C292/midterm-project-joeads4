@@ -63,7 +63,7 @@ public class MixIngredients : MonoBehaviour
         }
 
 
-        print("Wrong" + firstIngredient + secondIngredient + thirdIngredient);
+        else print("Wrong" + firstIngredient + secondIngredient + thirdIngredient);
     }
   
 }
