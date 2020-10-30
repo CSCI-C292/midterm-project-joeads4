@@ -8,6 +8,7 @@ public class MixIngredients : MonoBehaviour
     [SerializeField] Transform slots;
 
     public Recipe recipe;
+    public DialogueParser parser;
 
     string firstIngredient;
     string secondIngredient;
@@ -51,6 +52,12 @@ public class MixIngredients : MonoBehaviour
 
     public void CheckRecipe()
     {
+        Recipe recipe = slots.GetComponent<Recipe>();
+
+        if(recipe.name == parser.d.Recipe)
+        {
+            Debug.Log("Recipe matches");
+
         if (firstIngredient == recipe.firstIngredient)
         {
             if (secondIngredient == recipe.secondIngredient)
