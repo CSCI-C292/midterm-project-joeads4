@@ -14,7 +14,6 @@ public class DialogueHandler : MonoBehaviour
 
 
     public string dialogue;
-    string emotion;
 
     void Start()
     {
@@ -68,7 +67,7 @@ public class DialogueHandler : MonoBehaviour
     {
         parser.currentSpeakerName = parser.FindSpeaker(parser.lineNum);
         dialogue = parser.GetContent(parser.lineNum);
-        emotion = parser.GetPose(parser.lineNum);
+        parser.currentSpeakerEmotion = parser.GetPose(parser.lineNum);
         DisplayImages();
     }
 
@@ -99,35 +98,36 @@ public class DialogueHandler : MonoBehaviour
         {
 
             GameObject character = GameObject.Find(parser.currentSpeakerName);
-            int pose = 0;
             //emotion = character.GetComponent<Character>().characterPoses.Values(pose)
             // print("charName: " + load.currentSpeakerName);
 
 
-
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
-            currSprite.sprite = character.GetComponent<Character>().characterPoses[0];
+            
 
 
 
-            switch (emotion)
+            switch (parser.currentSpeakerEmotion)
             {
                 case "H":
-                    //happy portrait
+                    currSprite.sprite = character.GetComponent<Character>().characterPoses[0];
+                    Debug.Log("Happy");
                     break;
 
                 case "S":
-                    //sad portrait
+                    currSprite.sprite = character.GetComponent<Character>().characterPoses[1];
+                    Debug.Log("Sad");
                     break;
 
                 case "N":
-                    //neutral portrait
+                    currSprite.sprite = character.GetComponent<Character>().characterPoses[2];
+                    Debug.Log("Neutral");
                     break;
             }
 
             SetSpritePositions(character);
 
-            SetTextPosition(dialogueText);
+            SetTextPosition();
         }
 
 
@@ -135,13 +135,13 @@ public class DialogueHandler : MonoBehaviour
 
     void SetSpritePositions(GameObject spriteObj)
     {
-        spriteObj.transform.position = new Vector3(-210, -70);
+        spriteObj.gameObject.SetActive(true);
     }
 
 
-    void SetTextPosition(TMP_Text textPos)
+    void SetTextPosition()
     {
-        textPos.transform.position = new Vector3(-190, 100, -200);
+        dialogueText.gameObject.SetActive(true);
         textBox.gameObject.SetActive(true);
     }
 

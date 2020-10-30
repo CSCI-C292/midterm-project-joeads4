@@ -13,8 +13,8 @@ public class DialogueParser : MonoBehaviour
     public int lineNum;
 
     public string currentSpeakerName;
-    string currentSpeakerContent;
-    string currentSpeakerEmotion;
+    public string currentSpeakerContent;
+    public string currentSpeakerEmotion;
 
 
     struct DialogueLine
