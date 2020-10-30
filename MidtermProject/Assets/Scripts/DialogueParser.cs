@@ -87,7 +87,7 @@ public class DialogueParser : MonoBehaviour
                 }
 
 
-                DialogueLine lineEntry = new DialogueLine(charData[0].Substring(charData[0].IndexOf('[') + 1), lineData[1], charData[1].Substring(charData[1].IndexOf(']')));
+                DialogueLine lineEntry = new DialogueLine(charData[0].Substring(charData[0].IndexOf('[') + 1), lineData[1], charData[1].Substring(0, charData[1].IndexOf(']')));
                 lines.Add(lineEntry);
 
 
@@ -96,7 +96,7 @@ public class DialogueParser : MonoBehaviour
                 currentSpeakerEmotion = lineEntry.emotion;
 
 
-                print("line entry: " + "name: " + lineEntry.name + "dialogue: " + lineEntry.content + "emotion: " + lineEntry.emotion);
+                print("line entry: " + "name: " + currentSpeakerName + "dialogue: " + currentSpeakerContent + "emotion: " + currentSpeakerEmotion);
 
 
 
