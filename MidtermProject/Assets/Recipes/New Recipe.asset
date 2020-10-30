@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aac5a59c97f7b74981fd00a95105367, type: 3}
-  m_Name: Latte
+  m_Name: New Recipe
   m_EditorClassIdentifier: 
   name: 
   icon: {fileID: 0}
-  firstIngredient: Coffee
-  secondIngredient: Milk
-  thirdIngredient: Tea
+  firstIngredient: 
+  secondIngredient: 
+  thirdIngredient: 
