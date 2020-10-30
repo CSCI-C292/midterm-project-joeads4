@@ -50,7 +50,7 @@ public class DialogueHandler : MonoBehaviour
 
     public void ShowDialogue()
     {
-        ResetImages();
+        //ResetImages();
         ParseLine();
         UpdateUI();
     }
@@ -149,7 +149,9 @@ public class DialogueHandler : MonoBehaviour
     {
         if (dialogue == "")
         {
-            dialogueUI.gameObject.SetActive(false);
+            //dialogueUI.gameObject.SetActive(false);
+
+            textBox.gameObject.SetActive(false);
 
             parser.ClearLines();
 
