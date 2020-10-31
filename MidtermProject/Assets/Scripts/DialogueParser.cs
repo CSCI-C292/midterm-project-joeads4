@@ -15,6 +15,7 @@ public class DialogueParser : MonoBehaviour
     public string currentSpeakerName;
     public string currentSpeakerContent;
     public string currentSpeakerEmotion;
+    public string currentRecipe;
 
 
     struct DialogueLine
@@ -102,7 +103,8 @@ public class DialogueParser : MonoBehaviour
 
             }
 
-
+            currentRecipe = d.Recipe;
+            Debug.Log("Current recipe: " + currentRecipe);
         }
 
 
@@ -143,5 +145,8 @@ public class DialogueParser : MonoBehaviour
         }
         return "";
     }
+
+
+    
 
 }

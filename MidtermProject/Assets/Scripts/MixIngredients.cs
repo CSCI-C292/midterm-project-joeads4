@@ -13,12 +13,17 @@ public class MixIngredients : MonoBehaviour
     string firstIngredient;
     string secondIngredient;
     string thirdIngredient;
+    string recipeName;
     
     public GameObject slot01;
     public GameObject slot02;
     public GameObject slot03;
 
-
+    private void Start()
+    {
+        recipeName = parser.currentRecipe;
+        Debug.Log("name: " + recipeName);
+    }
     public void AssignIngredients()
     {
         
@@ -52,25 +57,27 @@ public class MixIngredients : MonoBehaviour
 
     public void CheckRecipe()
     {
-        Recipe recipe = slots.GetComponent<Recipe>();
-
-        if(recipe.name == parser.d.Recipe)
-        {
-            Debug.Log("Recipe matches");
-
-        if (firstIngredient == recipe.firstIngredient)
-        {
-            if (secondIngredient == recipe.secondIngredient)
-            {
-                if(thirdIngredient == recipe.thirdIngredient)
-                {
-                    print("Recipe Made");
-                }
-            }
-        }
+        
 
 
-        else print("Wrong" + firstIngredient + secondIngredient + thirdIngredient);
+        //if (recipeName == recipe.ToString())
+        //{
+        //    Debug.Log("Recipe matches");
+
+        //    if (firstIngredient == recipe.firstIngredient)
+        //    {
+        //        if (secondIngredient == recipe.secondIngredient)
+        //        {
+        //            if (thirdIngredient == recipe.thirdIngredient)
+        //            {
+        //                print("Recipe Made");
+        //            }
+        //        }
+        //    }
+
+
+        //    else Debug.Log("Wrong" + firstIngredient + secondIngredient + thirdIngredient);
+        //}
     }
   
 }
