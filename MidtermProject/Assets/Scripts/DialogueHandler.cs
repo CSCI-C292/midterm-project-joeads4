@@ -48,6 +48,15 @@ public class DialogueHandler : MonoBehaviour
             ShowDialogue();
             parser.lineNum++;
         }
+
+
+        if (dialogueUI == true)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                ContinueDialogue();
+            }
+        }
     }
 
 
@@ -61,6 +70,7 @@ public class DialogueHandler : MonoBehaviour
         CloseUI();
     }
 
+  
 
     public void ShowDialogue()
     {
