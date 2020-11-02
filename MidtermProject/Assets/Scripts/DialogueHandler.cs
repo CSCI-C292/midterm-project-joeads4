@@ -15,6 +15,20 @@ public class DialogueHandler : MonoBehaviour
 
     public string dialogue;
 
+
+
+    [SerializeField] Transform slots;
+
+    public string firstIngredient;
+    public string secondIngredient;
+    public string thirdIngredient;
+
+    public GameObject slot01;
+    public GameObject slot02;
+    public GameObject slot03;
+
+
+
     void Start()
     {
 
@@ -159,5 +173,57 @@ public class DialogueHandler : MonoBehaviour
         }
     }
 
-  
+
+    public void AssignIngredients()
+    {
+        if (slot01.transform.childCount > 0)
+        {
+            GameObject item = slot01.GetComponent<Slot>().item;
+            firstIngredient = item.name;
+            Debug.Log(firstIngredient);
+        }
+
+        if (slot02.transform.childCount > 0)
+        {
+            GameObject item = slot02.GetComponent<Slot>().item;
+            secondIngredient = item.name;
+            Debug.Log(secondIngredient);
+        }
+        if (slot03.transform.childCount > 0)
+        {
+            GameObject item = slot03.GetComponent<Slot>().item;
+            thirdIngredient = item.name;
+            Debug.Log(thirdIngredient);
+        }
+
+        Debug.Log("4:" + parser.currentIngredientOne + " 5: " + parser.currentIngredientTwo + " 6: " + parser.currentIngredientThree);
+
+        CheckRecipe();
+
+
+    }
+
+
+    public void CheckRecipe()
+    {
+
+
+        if (firstIngredient == parser.currentIngredientOne)
+        {
+            Debug.Log("Match");
+            if (secondIngredient == parser.currentIngredientTwo)
+            {
+                Debug.Log("Match");
+                if (thirdIngredient == parser.currentIngredientThree)
+                {
+                    Debug.Log("Recipe Made");
+                }
+            }
+        }
+
+
+
+    }
+
+
 }

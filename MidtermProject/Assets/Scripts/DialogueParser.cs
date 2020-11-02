@@ -15,7 +15,10 @@ public class DialogueParser : MonoBehaviour
     public string currentSpeakerName;
     public string currentSpeakerContent;
     public string currentSpeakerEmotion;
-    public string currentRecipe;
+    public string currentIngredientOne;
+    public string currentIngredientTwo;
+    public string currentIngredientThree;
+
 
 
     struct DialogueLine
@@ -54,7 +57,9 @@ public class DialogueParser : MonoBehaviour
             d.SpeakerEmotion = row[2];
             d.DialogueType = row[3];
             d.DialogueText = row[4];
-            d.Recipe = row[5];
+            d.FirstIngredient = row[5];
+            d.SecondIngredient = row[6];
+            d.ThirdIngredient = row[7];
             dialogues.Add(d);
         }
 
@@ -103,8 +108,11 @@ public class DialogueParser : MonoBehaviour
 
             }
 
-            currentRecipe = d.Recipe;
-            Debug.Log("Current recipe: " + currentRecipe);
+            currentIngredientOne = d.FirstIngredient;
+            currentIngredientTwo = d.SecondIngredient;
+            currentIngredientThree = d.ThirdIngredient;
+
+            Debug.Log("1:" + currentIngredientOne + " 2: " + currentIngredientTwo + " 3: " + currentIngredientThree);
         }
 
 

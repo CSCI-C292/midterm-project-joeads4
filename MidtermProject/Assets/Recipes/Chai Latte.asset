@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Chai Latte
   icon: {fileID: 0}
   firstIngredient: Coffee
-  secondIngredient: Milk
-  thirdIngredient: Tea
+  secondIngredient: Tea
+  thirdIngredient: Milk

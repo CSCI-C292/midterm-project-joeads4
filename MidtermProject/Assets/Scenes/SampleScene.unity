@@ -347,7 +347,7 @@ PrefabInstance:
     - target: {fileID: 2034571074685002118, guid: 1b0aa131d93120746a651852730b6106,
         type: 3}
       propertyPath: m_Name
-      value: Cinnamon
+      value: Chocolate
       objectReference: {fileID: 0}
     - target: {fileID: 2722710682563169154, guid: 1b0aa131d93120746a651852730b6106,
         type: 3}
@@ -454,12 +454,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6288502330946872380, guid: 1b0aa131d93120746a651852730b6106,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 647dec2caddb7374d9d9d90f6ff24f9c,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0aa131d93120746a651852730b6106, type: 3}
 --- !u!1 &267457294
@@ -2926,7 +2920,7 @@ GameObject:
   - component: {fileID: 1841920135}
   - component: {fileID: 1841920137}
   m_Layer: 5
-  m_Name: CinnamonSlot
+  m_Name: ChocolateSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3110,6 +3104,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1453739090}
         m_MethodName: AssignIngredients
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1453739090}
+        m_MethodName: CheckRecipe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3338,4 +3343,6 @@ MonoBehaviour:
   currentSpeakerName: 
   currentSpeakerContent: 
   currentSpeakerEmotion: 
-  currentRecipe: 
+  currentIngredientOne: 
+  currentIngredientTwo: 
+  currentIngredientThree: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c96a29387dfce40a3634550b59ce71, type: 3}
   m_Name: Hot Chocolate
   m_EditorClassIdentifier: 
-  name: Hot Chocolate
+  name: Mocha
   icon: {fileID: 0}
   firstIngredient: Coffee
   secondIngredient: Chocolate

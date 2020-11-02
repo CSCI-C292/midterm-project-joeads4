@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class IngredientList : MonoBehaviour, IHasChanged
 {
     [SerializeField] Transform slots;
-    [SerializeField] Text inventoryText;
+    [SerializeField] private Text inventoryText;
 
     // Start is called before the first frame update
     void Start()

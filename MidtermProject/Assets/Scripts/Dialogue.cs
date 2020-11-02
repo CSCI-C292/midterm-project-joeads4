@@ -9,6 +9,7 @@ public class Dialogue
     public string SpeakerEmotion;
     public string DialogueType;
     public string DialogueText;
-    public string Recipe;
-
+    public string FirstIngredient;
+    public string SecondIngredient;
+    public string ThirdIngredient;
 }
