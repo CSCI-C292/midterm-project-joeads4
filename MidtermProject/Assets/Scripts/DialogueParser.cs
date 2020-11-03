@@ -18,6 +18,7 @@ public class DialogueParser : MonoBehaviour
     public string currentIngredientOne;
     public string currentIngredientTwo;
     public string currentIngredientThree;
+    public string currentDialogueType;
 
 
 
@@ -67,29 +68,26 @@ public class DialogueParser : MonoBehaviour
 
         foreach (Dialogue d in dialogues)
         {
-            //Debug.Log(d.SpeakerOneName);
-
-            //print("Dialogue Text: " + d.DialogueText);
-
+            
             string[] line = d.DialogueText.Split(';');
 
 
             foreach (string s in line)
             {
-                //print("string: " + s);=
+                
 
                 string[] lineData = s.Split(']');
 
                 for (int i = 0; i < lineData.Length; i++)
                 {
-                    //print("split on ]" + lineData[i]);
+                    
                 }
 
                 string[] charData = s.Split('-');
 
                 for (int i = 0; i < charData.Length; i++)
                 {
-                    //print("split on -" + charData[i]);
+                   
                 }
 
 
@@ -113,6 +111,9 @@ public class DialogueParser : MonoBehaviour
             currentIngredientThree = d.ThirdIngredient;
 
             Debug.Log("1:" + currentIngredientOne + " 2: " + currentIngredientTwo + " 3: " + currentIngredientThree);
+
+            currentDialogueType = d.DialogueType;
+
         }
 
 

@@ -28,7 +28,6 @@ public class DialogueHandler : MonoBehaviour
     public GameObject slot03;
 
 
-
     void Start()
     {
 
@@ -122,15 +121,9 @@ public class DialogueHandler : MonoBehaviour
         {
 
             GameObject character = GameObject.Find(parser.currentSpeakerName);
-            //emotion = character.GetComponent<Character>().characterPoses.Values(pose)
-            // print("charName: " + load.currentSpeakerName);
-
 
             SpriteRenderer currSprite = character.GetComponent<SpriteRenderer>();
             
-
-
-
             switch (parser.currentSpeakerEmotion)
             {
                 case "H":
@@ -190,23 +183,24 @@ public class DialogueHandler : MonoBehaviour
         {
             GameObject item = slot01.GetComponent<Slot>().item;
             firstIngredient = item.name;
-            Debug.Log(firstIngredient);
+            //Debug.Log(firstIngredient);
         }
 
         if (slot02.transform.childCount > 0)
         {
             GameObject item = slot02.GetComponent<Slot>().item;
             secondIngredient = item.name;
-            Debug.Log(secondIngredient);
+            //Debug.Log(secondIngredient);
         }
         if (slot03.transform.childCount > 0)
         {
             GameObject item = slot03.GetComponent<Slot>().item;
             thirdIngredient = item.name;
-            Debug.Log(thirdIngredient);
+            //Debug.Log(thirdIngredient);
         }
 
-        Debug.Log("4:" + parser.currentIngredientOne + " 5: " + parser.currentIngredientTwo + " 6: " + parser.currentIngredientThree);
+        Debug.Log("Slot1: " + firstIngredient + " Slot 2: " + secondIngredient + " Slot 3: " + thirdIngredient);
+        Debug.Log("Spreadsheet 1: " + parser.currentIngredientOne + " Spreadsheet 2: " + parser.currentIngredientTwo + " Spreadsheet 3: " + parser.currentIngredientThree);
 
         CheckRecipe();
 
@@ -226,14 +220,37 @@ public class DialogueHandler : MonoBehaviour
                 Debug.Log("Match");
                 if (thirdIngredient == parser.currentIngredientThree)
                 {
-                    Debug.Log("Recipe Made");
+                    Debug.Log("Recipe made");
+                }
+                else
+                {
+                    Debug.Log("Recipe failed");
                 }
             }
         }
 
-
-
     }
 
+
+    public void CheckType()
+    {
+        switch (parser.currentDialogueType)
+        {
+            case "Intro":
+                Debug.Log("Intro");
+                break;
+
+            case "Positive":
+                Debug.Log("Positive");
+                break;
+
+            case "Negative":
+                Debug.Log("Negative");
+                break;
+
+
+        }
+            
+    }
 
 }
