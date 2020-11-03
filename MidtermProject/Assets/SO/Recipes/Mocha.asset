@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b80a05c0451e243828b8607b6dd797, type: 3}
+  m_Name: Mocha
+  m_EditorClassIdentifier: 
+  recipeName: 
+  RecipeIngredients:
+  - {fileID: 11400000, guid: 1b21c733448db7a4ba50b7cd639cb796, type: 2}
+  - {fileID: 11400000, guid: 21fa67f36c4465443a45798c2fc98b42, type: 2}
+  - {fileID: 11400000, guid: 2f287e5b388d3904798a8d64bff20e1a, type: 2}

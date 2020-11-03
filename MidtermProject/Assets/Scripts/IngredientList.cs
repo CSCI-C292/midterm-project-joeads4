@@ -30,7 +30,7 @@ public class IngredientList : MonoBehaviour, IHasChanged
             GameObject item = slotTransform.GetComponent<Slot>().item;
             if (item)
             {
-                builder.Append(item.name);
+                builder.Append(item.GetComponent<IngredientDisplay>().ingredient.name);
                 builder.Append("\n");
             }
         }

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c96a29387dfce40a3634550b59ce71, type: 3}
-  m_Name: Chai Latte
+  m_Script: {fileID: 11500000, guid: a3669cd870839974b8b92e02a8f1cf85, type: 3}
+  m_Name: Tea
   m_EditorClassIdentifier: 
-  name: Chai Latte
-  icon: {fileID: 0}
-  firstIngredient: Coffee
-  secondIngredient: Tea
-  thirdIngredient: Milk
+  name: Tea
+  image: {fileID: 21300000, guid: d3db903ccb1418847b6781ec3e49fc15, type: 3}
