@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class DialogueHandler : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class DialogueHandler : MonoBehaviour
     public string firstIngredient;
     public string secondIngredient;
     public string thirdIngredient;
+
+    public List<ScriptableObject> CurrentMixIngredients = new List<ScriptableObject>();
 
     public GameObject slot01;
     public GameObject slot02;
@@ -117,6 +120,11 @@ public class DialogueHandler : MonoBehaviour
     {
 
 
+        
+
+
+
+
         if (parser.currentSpeakerName != "")
         {
 
@@ -179,32 +187,33 @@ public class DialogueHandler : MonoBehaviour
 
     public void AssignIngredients()
     {
-        if (slot01.transform.childCount > 0)
-        {
-            GameObject item = slot01.GetComponent<Slot>().item;
-            firstIngredient = item.name;
-            //Debug.Log(firstIngredient);
-        }
+        //if (slot01.transform.childCount > 0)
+        //{
+        //    GameObject item = slot01.GetComponent<Slot>().item;
+        //    firstIngredient = item.GetComponent<IngredientDisplay>().ingredient.name;
+        //    Debug.Log(firstIngredient);
+        //}
 
-        if (slot02.transform.childCount > 0)
-        {
-            GameObject item = slot02.GetComponent<Slot>().item;
-            secondIngredient = item.name;
-            //Debug.Log(secondIngredient);
-        }
-        if (slot03.transform.childCount > 0)
-        {
-            GameObject item = slot03.GetComponent<Slot>().item;
-            thirdIngredient = item.name;
-            //Debug.Log(thirdIngredient);
-        }
+        //if (slot02.transform.childCount > 0)
+        //{
+        //    GameObject item = slot02.GetComponent<Slot>().item;
+        //    secondIngredient = item.GetComponent<IngredientDisplay>().ingredient.name; ;
+        //    Debug.Log(secondIngredient);
+        //}
+        //if (slot03.transform.childCount > 0)
+        //{
+        //    GameObject item = slot03.GetComponent<Slot>().item;
+        //    thirdIngredient = item.GetComponent<IngredientDisplay>().ingredient.name; ;
+        //    Debug.Log(thirdIngredient);
+        //}
 
-        Debug.Log("Slot1: " + firstIngredient + " Slot 2: " + secondIngredient + " Slot 3: " + thirdIngredient);
-        Debug.Log("Spreadsheet 1: " + parser.currentIngredientOne + " Spreadsheet 2: " + parser.currentIngredientTwo + " Spreadsheet 3: " + parser.currentIngredientThree);
+        //Debug.Log("Slot1: " + firstIngredient + " Slot 2: " + secondIngredient + " Slot 3: " + thirdIngredient);
+        //Debug.Log("Spreadsheet 1: " + parser.currentIngredientOne + " Spreadsheet 2: " + parser.currentIngredientTwo + " Spreadsheet 3: " + parser.currentIngredientThree);
 
-        CheckRecipe();
+        //CheckRecipe();
 
 
+        
     }
 
 

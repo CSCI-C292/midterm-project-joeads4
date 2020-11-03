@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 652dae947ee9d8d4c8062f8b96fe84d8, type: 3}
+  m_Name: Kennedy
+  m_EditorClassIdentifier: 
+  HappySprite: {fileID: 2800000, guid: 9bed240ad38a1d94ca13437e0468f47f, type: 3}
+  SadSprite: {fileID: 2800000, guid: e4909739a9a851340927e7b8cb4c27d6, type: 3}
+  NeutralSprite: {fileID: 2800000, guid: d7b472e71da490d4abd90f478f6880a9, type: 3}
+  favoriteRecipe: {fileID: 11400000, guid: 8fb05dd1be0ef8e42bf5ed3b4b954a10, type: 2}
+  ChatLines:
+  - emotion: 0
+    text: "Aaaaaah!!!! I\u2019m so excited! "
+  - emotion: 0
+    text: I heard you were opening today, so I just had to stop by!
+  - emotion: 2
+    text: "I\u2019m Kennedy, by the way!"
+  - emotion: 2
+    text: Could you make me a Mocha? I loooooove chocolate!
+  - emotion: 2
+    text: Have you ever had one?
+  - emotion: 2
+    text: "Oh, I\u2019m sure you have, you own the place!"
+  - emotion: 0
+    text: Mocha, mocha, mocha, is there anything more perfect?
+  - emotion: 0
+    text: Coffee, chocolate, and milk, a match made in heaven!
