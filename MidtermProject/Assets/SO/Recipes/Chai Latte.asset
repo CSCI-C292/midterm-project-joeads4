@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b80a05c0451e243828b8607b6dd797, type: 3}
   m_Name: Chai Latte
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: Chai Latte
   RecipeIngredients:
   - {fileID: 11400000, guid: 1b21c733448db7a4ba50b7cd639cb796, type: 2}
   - {fileID: 11400000, guid: 299249e004c90f943b6e4f2e167e59e3, type: 2}

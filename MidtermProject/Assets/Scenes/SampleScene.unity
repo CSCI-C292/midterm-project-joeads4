@@ -413,6 +413,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d1b75faf73bf63a48bbeee87d8a1fd2c, type: 2}
   - {fileID: 11400000, guid: 3973a9bb817de5a4fb6fa4b0ebc0a88d, type: 2}
   - {fileID: 11400000, guid: ba470d807bb26fe449b2aade826c373f, type: 2}
+  slots: {fileID: 88375908}
+  CurrentMixIngredients: []
+  currentRecipe: {fileID: 0}
 --- !u!4 &143954057
 Transform:
   m_ObjectHideFlags: 0
@@ -3048,7 +3051,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2121911643}
+      - m_Target: {fileID: 143954056}
         m_MethodName: AssignIngredients
         m_Mode: 1
         m_Arguments:
@@ -3326,6 +3329,7 @@ MonoBehaviour:
   firstIngredient: 
   secondIngredient: 
   thirdIngredient: 
+  CurrentMixIngredients: []
   slot01: {fileID: 735262633}
   slot02: {fileID: 836677270}
   slot03: {fileID: 756168596}

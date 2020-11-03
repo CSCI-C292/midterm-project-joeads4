@@ -8,5 +8,5 @@ public class Recipe : ScriptableObject
 {
     public string recipeName;
 
-    public ScriptableObject[] RecipeIngredients = null;
+    public List<Ingredient> RecipeIngredients = new List<Ingredient>();
 }

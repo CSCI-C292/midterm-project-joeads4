@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b80a05c0451e243828b8607b6dd797, type: 3}
   m_Name: Cocoa Tea
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: Coffee Tea
   RecipeIngredients:
   - {fileID: 11400000, guid: 299249e004c90f943b6e4f2e167e59e3, type: 2}
   - {fileID: 11400000, guid: 21fa67f36c4465443a45798c2fc98b42, type: 2}
