@@ -16,7 +16,7 @@ public class DialogueHandler : MonoBehaviour
 
     public string dialogue;
 
-
+    
 
     [SerializeField] Transform slots;
 
@@ -118,12 +118,6 @@ public class DialogueHandler : MonoBehaviour
 
     void DisplayImages()
     {
-
-
-        
-
-
-
 
         if (parser.currentSpeakerName != "")
         {

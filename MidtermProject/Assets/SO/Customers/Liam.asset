@@ -12,23 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652dae947ee9d8d4c8062f8b96fe84d8, type: 3}
   m_Name: Liam
   m_EditorClassIdentifier: 
-  HappySprite: {fileID: 2800000, guid: f69e3b50d70bf7e498909a415d2f6940, type: 3}
-  SadSprite: {fileID: 2800000, guid: b4a725c59663a884bb82307840afad41, type: 3}
-  NeutralSprite: {fileID: 2800000, guid: 3ca415020f7d222408e288e05c88e154, type: 3}
+  HappySprite: {fileID: 21300000, guid: d014d53a0e1e629448d6684c3fdf303a, type: 3}
+  SadSprite: {fileID: 21300000, guid: 27828306df0f4f740a65ebb53e8665d3, type: 3}
+  NeutralSprite: {fileID: 21300000, guid: 26dc71625bd319346b74a63e79c27839, type: 3}
   favoriteRecipe: {fileID: 11400000, guid: 8c6f61c6c946e084f8571fa4d3b192ac, type: 2}
-  ChatLines:
-  - emotion: 0
-    text: Opening day, huh?
-  - emotion: 2
-    text: "Name\u2019s Liam, I\u2019m the local brew fanatic around here."
-  - emotion: 2
-    text: This town has been dying for a new place.
-  - emotion: 1
-    text: The only place you can get a cup of joe is from the diner.
-  - emotion: 2
-    text: "It\u2019ll be nice to have something other than just burnt black coffee. "
-  - emotion: 2
-    text: 'Can I get a Chai Latte?  '
-  - emotion: 0
-    text: "I never would\u2019ve thought coffee, tea, and milk would taste good, but
-      it\u2019s become my favorite!"
+  chatLines: []

@@ -12,18 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652dae947ee9d8d4c8062f8b96fe84d8, type: 3}
   m_Name: Paisley
   m_EditorClassIdentifier: 
-  HappySprite: {fileID: 2800000, guid: f9938f693458e8847ae83c80b5a59182, type: 3}
-  SadSprite: {fileID: 2800000, guid: 1bc827743fc78f742ae0cbf1bf82b575, type: 3}
-  NeutralSprite: {fileID: 2800000, guid: 40a6f2e16fc07fa48ba04dc55b72c793, type: 3}
+  HappySprite: {fileID: 21300000, guid: f9938f693458e8847ae83c80b5a59182, type: 3}
+  SadSprite: {fileID: 21300000, guid: 1bc827743fc78f742ae0cbf1bf82b575, type: 3}
+  NeutralSprite: {fileID: 21300000, guid: 40a6f2e16fc07fa48ba04dc55b72c793, type: 3}
   favoriteRecipe: {fileID: 11400000, guid: 169a1ba93af716e408ce8f5ad491a2e7, type: 2}
-  ChatLines:
-  - emotion: 2
-    text: "H-hi, I\u2019m Paisley."
-  - emotion: 2
-    text: "I\u2019m a student here, and was hoping to find a new place to study."
-  - emotion: 2
-    text: "Can I have a Cocoa Tea? My mom makes it for me when I\u2019m feeling nervous."
-  - emotion: 2
-    text: "You don\u2019t have to make it as good as hers..."
-  - emotion: 0
-    text: 'just some tea, chocolate, and milk will be fine! '
+  chatLines: []

@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     public Recipe currentRecipe;
     public Customer currentCustomer;
+    public string currentEmotion;
+
+    public GameObject dialogueUI;
+    public GameObject textBox;
 
     public GameObject Mocha;
     public GameObject ChaiLatte;
@@ -22,11 +26,13 @@ public class GameManager : MonoBehaviour
 
     public Sprite currSprite;
 
+    public SpriteRenderer spriteDisplay;
+
     public TMP_Text dialogueText;
 
     public string dialogue;
 
-
+    Customer.ChatLine[] chatLines;
 
     public int lineNum;
 
@@ -40,11 +46,35 @@ public class GameManager : MonoBehaviour
         //case Emotion.HAPPY:
         // load CurrentCustomer.HappyGraphic into customer UI graphic
 
-        ReadLines();
+        lineNum = 0;
+
+        
+
+        ShowDialogue();
     }
 
+    private void Update()
+    {
+        if (lineNum == 0)
+        {
+            ShowDialogue();
+            lineNum++;
+        }
 
+        if (dialogueUI == true)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                ContinueDialogue();
+            }
+        }
+    }
 
+    void ShowDialogue()
+    {
+        ParseLine();
+        UpdateUI();
+    }
 
     public void AssignIngredients()
     {
@@ -104,47 +134,111 @@ public class GameManager : MonoBehaviour
 
     void DisplayImages()
     {
+        
+        currentEmotion = currentCustomer.chatLines[lineNum].emotion.ToString();
 
-
-
-    }
-    private void ReadLines()
-    {
-        //currSprite = spriteDisplay;
-        for (int i = 0; i < currentCustomer.chatLines.Length; i++)
+        Debug.Log("current emotion: " + currentEmotion);
+ 
+        switch (currentEmotion)
         {
-            dialogue = currentCustomer.chatLines[i].content;
-            Debug.Log("dialogue: " + dialogue);
+            case "HAPPY":
 
-            Customer.Emotion currentEmotion = currentCustomer.chatLines[i].emotion;
-            switch (currentEmotion)
-            {
-                case Customer.Emotion.HAPPY:
-                    currSprite = currentCustomer.HappySprite;
-                    Debug.Log("Happy");
-                    break;
+                spriteDisplay.sprite = currentCustomer.HappySprite;
+                Debug.Log("Happy");
+                break;
 
-                case Customer.Emotion.SAD:
-                    currSprite = currentCustomer.SadSprite;
-                    Debug.Log("Sad");
-                    break;
+            case "SAD":
+                spriteDisplay.sprite = currentCustomer.SadSprite;
+                Debug.Log("Sad");
+                break;
 
-                case Customer.Emotion.NEUTRAL:
-                    currSprite = currentCustomer.NeutralSprite;
-                    Debug.Log("Neutral");
-                    break;
+            case "NEUTRAL":
+                spriteDisplay.sprite = currentCustomer.NeutralSprite;
+                Debug.Log("Neutral");
+                break;
 
-            }
         }
 
 
+
+    }
+    //private void ReadLines()
+    //{
+    //    //currSprite = spriteDisplay;
+    //    for (int i = 0; i < currentCustomer.chatLines.Length; i++)
+    //    {
+
+    //        //dialogue = currentCustomer.chatLines[i].content;
+    //        Debug.Log("dialogue: " + dialogue);
+
+            
+    //    }
+
+
+    //}
+
+    public string GetContent(int lineNumber)
+    {
+        if (lineNumber < currentCustomer.chatLines.Length)
+        {
+            return currentCustomer.chatLines[lineNumber].content;
+        }
+        return "";
     }
 
+    public string GetPose(int lineNumber)
+    {
+        if (lineNumber < currentCustomer.chatLines.Length)
+        {
+            return currentCustomer.chatLines[lineNumber].emotion.ToString();
+        }
+        return "";
+    }
 
+    void ParseLine()
+    {
+        Debug.Log("Line num:" + lineNum);
+        dialogue = GetContent(lineNum);
+        Debug.Log("Line: " + dialogue);
+
+        currentEmotion = GetPose(lineNum);
+
+        DisplayImages();
+    }
     void UpdateUI()
     {
         dialogueText.text = dialogue;
     }
 
+
+    public void ContinueDialogue()
+    {
+        ShowDialogue();
+
+        lineNum++;
+
+        CloseUI();
+        
+    }
+    
+
+    public void ResetLineNum()
+    {
+        lineNum = 0;
+    }
+
+    void CloseUI()
+    {
+        if (dialogue == "")
+        {
+            //dialogueUI.gameObject.SetActive(false);
+
+            textBox.gameObject.SetActive(false);
+
+            
+
+            ResetLineNum();
+        }
+    }
 }
 
