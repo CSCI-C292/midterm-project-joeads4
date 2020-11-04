@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
     private void Start()
 
     {
-        currentCustomer = Customers[0];
-        currentRecipe = Customers[0].favoriteRecipe;
+        currentCustomer = Customers[1];
+        currentRecipe = Customers[1].favoriteRecipe;
         //(CurrentCustomer.ChatLine[currentIndex].emotion) {
         //case Emotion.HAPPY:
         // load CurrentCustomer.HappyGraphic into customer UI graphic
@@ -135,30 +135,34 @@ public class GameManager : MonoBehaviour
     void DisplayImages()
     {
         
-        currentEmotion = currentCustomer.chatLines[lineNum].emotion.ToString();
+        
 
-        Debug.Log("current emotion: " + currentEmotion);
- 
-        switch (currentEmotion)
+        if (currentEmotion != "")
+
+            currentEmotion = currentCustomer.chatLines[lineNum].emotion.ToString();
         {
-            case "HAPPY":
+            Debug.Log("current emotion: " + currentEmotion);
 
-                spriteDisplay.sprite = currentCustomer.HappySprite;
-                Debug.Log("Happy");
-                break;
+            switch (currentEmotion)
+            {
+                case "HAPPY":
 
-            case "SAD":
-                spriteDisplay.sprite = currentCustomer.SadSprite;
-                Debug.Log("Sad");
-                break;
+                    spriteDisplay.sprite = currentCustomer.HappySprite;
+                    Debug.Log("Happy");
+                    break;
 
-            case "NEUTRAL":
-                spriteDisplay.sprite = currentCustomer.NeutralSprite;
-                Debug.Log("Neutral");
-                break;
+                case "SAD":
+                    spriteDisplay.sprite = currentCustomer.SadSprite;
+                    Debug.Log("Sad");
+                    break;
 
+                case "NEUTRAL":
+                    spriteDisplay.sprite = currentCustomer.NeutralSprite;
+                    Debug.Log("Neutral");
+                    break;
+
+            }
         }
-
 
 
     }

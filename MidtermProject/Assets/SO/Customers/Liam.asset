@@ -16,4 +16,14 @@ MonoBehaviour:
   SadSprite: {fileID: 21300000, guid: 27828306df0f4f740a65ebb53e8665d3, type: 3}
   NeutralSprite: {fileID: 21300000, guid: 26dc71625bd319346b74a63e79c27839, type: 3}
   favoriteRecipe: {fileID: 11400000, guid: 8c6f61c6c946e084f8571fa4d3b192ac, type: 2}
-  chatLines: []
+  chatLines:
+  - emotion: 0
+    content: ads
+  - emotion: 2
+    content: asd
+  - emotion: 1
+    content: wea
+  - emotion: 2
+    content: werf
+  - emotion: 0
+    content: wef
