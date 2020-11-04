@@ -19,11 +19,33 @@ MonoBehaviour:
   chatLines:
   - emotion: 0
     content: asdf
-  - emotion: 0
+  - emotion: 1
     content: wef
-  - emotion: 0
+  - emotion: 2
     content: ewrq
-  - emotion: 0
+  - emotion: 1
     content: adf
-  - emotion: 0
+  - emotion: 2
     content: er
+  positiveLines:
+  - emotion: 0
+    content: pos
+  - emotion: 1
+    content: pos
+  - emotion: 0
+    content: pos
+  - emotion: 0
+    content: 
+  - emotion: 1
+    content: 
+  negativeLines:
+  - emotion: 2
+    content: neg
+  - emotion: 1
+    content: neg
+  - emotion: 1
+    content: neg
+  - emotion: 1
+    content: neg
+  - emotion: 1
+    content: neg

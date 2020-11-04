@@ -17,10 +17,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public static bool begindragging = false;
 
 
-    private void Update()
-    {
-        
-    }
+    
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -69,6 +66,12 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             GetComponent<CanvasGroup>().blocksRaycasts = true;
         }
         
+        
+    }
+
+    public void Reset()
+    {
+        //transform.position = startPosition;
         
     }
 }

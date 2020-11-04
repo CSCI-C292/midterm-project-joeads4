@@ -33,12 +33,11 @@ public class GameManager : MonoBehaviour
 
     public string dialogue;
 
-    Customer.ChatLine[] chatLines;
-
     public int lineNum;
 
     public int speakerNum;
 
+    public Customer.ChatLine[] currentChatLine;
 
     private void Start()
 
@@ -53,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         lineNum = 0;
 
-        
+        currentChatLine = currentCustomer.chatLines;
 
         ShowDialogue();
     }
@@ -77,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     void ShowDialogue()
     {
+        //
         ParseLine();
         UpdateUI();
     }
@@ -106,6 +106,10 @@ public class GameManager : MonoBehaviour
             if (CurrentMixIngredients[i] == currentRecipe.RecipeIngredients[i])
             {
                 Debug.Log("You made a " + currentRecipe.recipeName + "!");
+                currentChatLine = currentCustomer.positiveLines;
+                dialogue = currentChatLine[lineNum].content;
+                
+                ShowDialogue();
 
                 switch (currentRecipe.recipeName)
                 {
@@ -121,12 +125,17 @@ public class GameManager : MonoBehaviour
                         Mocha.gameObject.SetActive(true);
                         break;
                 }
-
+               dialogueUI.SetActive(true);
             }
 
             else
             {
                 Debug.Log("You made an unknown drink!");
+
+                currentChatLine = currentCustomer.negativeLines;
+                dialogue = currentChatLine[lineNum].content;
+                dialogueUI.SetActive(true);
+                ShowDialogue();
 
                 Unknown.gameObject.SetActive(true);
             }
@@ -139,12 +148,11 @@ public class GameManager : MonoBehaviour
 
     void DisplayImages()
     {
-        
-        
+
 
         if (currentEmotion != "")
 
-            currentEmotion = currentCustomer.chatLines[lineNum].emotion.ToString();
+            currentEmotion = currentChatLine[lineNum].emotion.ToString();
         {
             Debug.Log("current emotion: " + currentEmotion);
 
@@ -190,7 +198,7 @@ public class GameManager : MonoBehaviour
     {
         if (lineNumber < currentCustomer.chatLines.Length)
         {
-            return currentCustomer.chatLines[lineNumber].content;
+            return currentChatLine[lineNumber].content;
         }
         return "";
     }
@@ -199,7 +207,7 @@ public class GameManager : MonoBehaviour
     {
         if (lineNumber < currentCustomer.chatLines.Length)
         {
-            return currentCustomer.chatLines[lineNumber].emotion.ToString();
+            return currentChatLine[lineNumber].emotion.ToString();
         }
         return "";
     }

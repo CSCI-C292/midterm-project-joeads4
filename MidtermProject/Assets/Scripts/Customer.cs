@@ -14,6 +14,8 @@ public class Customer : ScriptableObject
     public Recipe favoriteRecipe;
 
     public ChatLine[] chatLines;
+    public ChatLine[] positiveLines;
+    public ChatLine[] negativeLines;
 
     [System.Serializable]
     public struct ChatLine
