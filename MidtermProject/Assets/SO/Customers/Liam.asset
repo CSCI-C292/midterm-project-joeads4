@@ -17,35 +17,54 @@ MonoBehaviour:
   NeutralSprite: {fileID: 21300000, guid: 26dc71625bd319346b74a63e79c27839, type: 3}
   favoriteRecipe: {fileID: 11400000, guid: 8c6f61c6c946e084f8571fa4d3b192ac, type: 2}
   chatLines:
-  - emotion: 0
-    content: ads
   - emotion: 2
-    content: asd
+    content: Opening day, huh?
+  - emotion: 0
+    content: "Name\u2019s Liam, I\u2019m the local brew fanatic around here."
+  - emotion: 2
+    content: This town has been dying for a new place.
   - emotion: 1
-    content: wea
+    content: The only place you can get a cup of joe is from the diner.
   - emotion: 2
-    content: werf
+    content: "It\u2019ll be nice to have something other than just burnt black coffee."
+  - emotion: 2
+    content: Can I get a Chai Latte?
   - emotion: 0
-    content: wef
+    content: "I never would\u2019ve thought coffee, tea, and milk would taste good,
+      but it\u2019s become my favorite!"
+  - emotion: 0
+    content: 
   positiveLines:
   - emotion: 0
-    content: adf
+    content: Finally, some good bean juice!
   - emotion: 0
-    content: afd
+    content: This place is going in my blog for sure.
   - emotion: 0
-    content: re
+    content: 
   - emotion: 0
-    content: fes
+    content: 
   - emotion: 0
-    content: fds
+    content: 
+  - emotion: 0
+    content: 
+  - emotion: 0
+    content: 
+  - emotion: 0
+    content: 
   negativeLines:
+  - emotion: 1
+    content: "Oh\u2026"
+  - emotion: 1
+    content: "Maybe I\u2019ll just stick with the diner..."
   - emotion: 0
-    content: fesea
+    content: 
   - emotion: 0
-    content: ea
+    content: 
   - emotion: 0
-    content: ef
+    content: 
   - emotion: 0
-    content: eaf
+    content: 
   - emotion: 0
-    content: fea
+    content: 
+  - emotion: 0
+    content: 

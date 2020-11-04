@@ -10,6 +10,7 @@ public class Customer : ScriptableObject
     public Sprite HappySprite;
     public Sprite SadSprite;
     public Sprite NeutralSprite;
+    public Sprite EmptySprite;
 
     public Recipe favoriteRecipe;
 

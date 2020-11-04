@@ -18,34 +18,52 @@ MonoBehaviour:
   favoriteRecipe: {fileID: 11400000, guid: 8fb05dd1be0ef8e42bf5ed3b4b954a10, type: 2}
   chatLines:
   - emotion: 0
-    content: asdf
-  - emotion: 1
-    content: wef
+    content: "Aaaaaah!!!! I\u2019m so excited!"
+  - emotion: 0
+    content: I heard you were opening today, so I just had to stop by!
   - emotion: 2
-    content: ewrq
-  - emotion: 1
-    content: adf
+    content: "I\u2019m Kennedy, by the way!"
+  - emotion: 0
+    content: Could you make me a Mocha? I loooooove chocolate!
   - emotion: 2
-    content: er
+    content: Have you ever had one?
+  - emotion: 2
+    content: "Oh, I\u2019m sure you have, you own the place!"
+  - emotion: 0
+    content: Mocha, mocha, mocha, is there anything more perfect?
+  - emotion: 0
+    content: Coffee, chocolate, and milk, a match made in heaven!
   positiveLines:
   - emotion: 0
-    content: pos
+    content: "Omg!!! You\u2019re the best!"
+  - emotion: 0
+    content: "I\u2019m going to have to stop by for one of these everyday!!!"
+  - emotion: 0
+    content: 
+  - emotion: 0
+    content: 
   - emotion: 1
-    content: pos
-  - emotion: 0
-    content: pos
-  - emotion: 0
+    content: 
+  - emotion: 1
+    content: 
+  - emotion: 1
     content: 
   - emotion: 1
     content: 
   negativeLines:
-  - emotion: 2
-    content: neg
   - emotion: 1
-    content: neg
+    content: Ewww!
   - emotion: 1
-    content: neg
+    content: Not enough chocolate in the world could make this better.
   - emotion: 1
-    content: neg
+    content: 
   - emotion: 1
-    content: neg
+    content: 
+  - emotion: 1
+    content: 
+  - emotion: 1
+    content: 
+  - emotion: 1
+    content: 
+  - emotion: 1
+    content: 

@@ -351,6 +351,8 @@ MonoBehaviour:
   dialogue: 
   lineNum: 0
   speakerNum: 0
+  completed: 0
+  brewButton: {fileID: 1908555495}
   currentChatLine: []
 --- !u!4 &143954057
 Transform:

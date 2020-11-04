@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using System;
-
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,11 +40,16 @@ public class GameManager : MonoBehaviour
 
     public int completed;
 
+    public Button brewButton;
+
     public Customer.ChatLine[] currentChatLine;
 
     private void Start()
 
     {
+
+        
+
         speakerNum = 0;
         completed = 0;
 
@@ -60,24 +65,31 @@ public class GameManager : MonoBehaviour
 
         ShowDialogue();
 
-        Shuffle(Customers);
-    }
-
-
-        private void Update()
-    {
         if (lineNum == 0)
         {
             ShowDialogue();
             lineNum++;
         }
 
+    }
+
+
+    private void Update()
+    {
+
+
         if (dialogueUI.activeSelf)
         {
+            brewButton.gameObject.SetActive(false);
+
             if (Input.GetMouseButtonDown(0))
             {
                 ContinueDialogue();
             }
+        }
+        else
+        {
+            brewButton.gameObject.SetActive(true);
         }
 
         if (!dialogueUI.activeSelf)
@@ -86,7 +98,12 @@ public class GameManager : MonoBehaviour
             {
                speakerNum = speakerNum + 1;
                completed = 0;
+
+                currentCustomer = Customers[speakerNum];
+                currentRecipe = Customers[speakerNum].favoriteRecipe;
+
                 currentChatLine = currentCustomer.chatLines;
+                lineNum = 0;
 
                 ChaiLatte.SetActive(false);
                 CocoaTea.SetActive(false);
@@ -95,12 +112,13 @@ public class GameManager : MonoBehaviour
 
 
                 dialogueUI.SetActive(true);
+
+                
             }
         }
-        
 
-        currentCustomer = Customers[speakerNum];
-        currentRecipe = Customers[speakerNum].favoriteRecipe;
+        
+        
     }
 
     public void TriggerDialogue()
@@ -134,53 +152,91 @@ public class GameManager : MonoBehaviour
 
     void CheckRecipe()
     {
-        Debug.Log("Speaker Number: " + speakerNum);
-        for (int i = 0; i < CurrentMixIngredients.Count; i++)
+        bool isEqual = Enumerable.SequenceEqual(CurrentMixIngredients, currentRecipe.RecipeIngredients);
+        if (isEqual)
         {
-            if (CurrentMixIngredients[i] == currentRecipe.RecipeIngredients[i])
+            Debug.Log("You made a " + currentRecipe.recipeName + "!");
+            currentChatLine = currentCustomer.positiveLines;
+            dialogue = currentChatLine[lineNum].content;
+
+            //ShowDialogue();
+
+            switch (currentRecipe.recipeName)
             {
-                Debug.Log("You made a " + currentRecipe.recipeName + "!");
-                currentChatLine = currentCustomer.positiveLines;
-                dialogue = currentChatLine[lineNum].content;
-                
-                ShowDialogue();
+                case "Chai Latte":
+                    ChaiLatte.gameObject.SetActive(true);
+                    break;
 
-                switch (currentRecipe.recipeName)
-                {
-                    case "Chai Latte":
-                        ChaiLatte.gameObject.SetActive(true);
-                        break;
+                case "Cocoa Tea":
+                    CocoaTea.gameObject.SetActive(true);
+                    break;
 
-                    case "Cocoa Tea":
-                        CocoaTea.gameObject.SetActive(true);
-                        break;
-
-                    case "Mocha":
-                        Mocha.gameObject.SetActive(true);
-                        break;
-                }
-               dialogueUI.SetActive(true);
-                
+                case "Mocha":
+                    Mocha.gameObject.SetActive(true);
+                    break;
             }
-
-            else
-            {
-                Debug.Log("You made an unknown drink!");
-
-                currentChatLine = currentCustomer.negativeLines;
-                dialogue = currentChatLine[lineNum].content;
-                dialogueUI.SetActive(true);
-                ShowDialogue();
-
-                Unknown.gameObject.SetActive(true);
-                
-            }
-
-
+            //dialogueUI.SetActive(true);
         }
-        
-        
-        
+        else
+        {
+            Debug.Log("You made an unknown drink!");
+
+            currentChatLine = currentCustomer.negativeLines;
+            dialogue = currentChatLine[lineNum].content;
+            //dialogueUI.SetActive(true);
+            //ShowDialogue();
+
+            Unknown.gameObject.SetActive(true);
+        }
+
+        //Debug.Log("Speaker Number: " + speakerNum);
+        //for (int i = 0; i < CurrentMixIngredients.Count; i++)
+        //{
+        //    if (CurrentMixIngredients[i] == currentRecipe.RecipeIngredients[i])
+        //    {
+        //        Debug.Log("You made a " + currentRecipe.recipeName + "!");
+        //        currentChatLine = currentCustomer.positiveLines;
+        //        dialogue = currentChatLine[lineNum].content;
+
+        //        //ShowDialogue();
+
+        //        switch (currentRecipe.recipeName)
+        //        {
+        //            case "Chai Latte":
+        //                ChaiLatte.gameObject.SetActive(true);
+        //                break;
+
+        //            case "Cocoa Tea":
+        //                CocoaTea.gameObject.SetActive(true);
+        //                break;
+
+        //            case "Mocha":
+        //                Mocha.gameObject.SetActive(true);
+        //                break;
+        //        }
+        //       //dialogueUI.SetActive(true);
+
+        //    }
+
+        //    if (CurrentMixIngredients[i] != currentRecipe.RecipeIngredients[i])
+        //    {
+        //        Debug.Log("You made an unknown drink!");
+
+        //        currentChatLine = currentCustomer.negativeLines;
+        //        dialogue = currentChatLine[lineNum].content;
+        //        //dialogueUI.SetActive(true);
+        //        //ShowDialogue();
+
+        //        Unknown.gameObject.SetActive(true);
+
+        //    }
+
+
+        //}
+
+        dialogueUI.SetActive(true);
+        ShowDialogue();
+
     }
 
 
@@ -276,6 +332,10 @@ public class GameManager : MonoBehaviour
         
     }
     
+    public void ClearList()
+    {
+        CurrentMixIngredients.Clear();
+    }
 
     public void ResetLineNum()
     {
@@ -295,6 +355,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("Speaker Number: " + speakerNum);
 
             ResetLineNum();
+
+            ClearList();
         }
     }
 }

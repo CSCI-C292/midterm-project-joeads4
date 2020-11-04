@@ -17,35 +17,54 @@ MonoBehaviour:
   NeutralSprite: {fileID: 21300000, guid: 40a6f2e16fc07fa48ba04dc55b72c793, type: 3}
   favoriteRecipe: {fileID: 11400000, guid: 169a1ba93af716e408ce8f5ad491a2e7, type: 2}
   chatLines:
+  - emotion: 2
+    content: "H-hi, I\u2019m Paisley."
+  - emotion: 2
+    content: "I\u2019m a student here, and was hoping to find a new place to study."
+  - emotion: 2
+    content: "Can I have a Cocoa Tea? My mom makes it for me when I\u2019m feeling
+      nervous."
+  - emotion: 2
+    content: "You don\u2019t have to make it as good as hers..."
   - emotion: 0
-    content: fhkj
-  - emotion: 1
-    content: dhg
+    content: ' just some tea, chocolate, and milk will be fine!'
   - emotion: 0
-    content: yytr
+    content: 
   - emotion: 0
-    content: yytr
+    content: 
   - emotion: 0
-    content: yytr
+    content: 
   positiveLines:
   - emotion: 0
-    content: adsf
-  - emotion: 2
-    content: feere
+    content: Wow, this is even better than my mom makes!
   - emotion: 1
-    content: we
+    content: "...please don\u2019t tell her I said that.."
+  - emotion: 1
+    content: 
   - emotion: 0
-    content: df
+    content: 
   - emotion: 1
-    content: fe
+    content: 
+  - emotion: 1
+    content: 
+  - emotion: 1
+    content: 
+  - emotion: 1
+    content: 
   negativeLines:
   - emotion: 1
-    content: efa
-  - emotion: 0
-    content: dfse
-  - emotion: 2
-    content: we
+    content: "\u2026"
   - emotion: 1
-    content: ef
+    content: "It\u2019s\u2026.um. You tried your best.."
+  - emotion: 1
+    content: Maybe my mom can give you some pointers...
+  - emotion: 1
+    content: 
   - emotion: 0
-    content: ae
+    content: 
+  - emotion: 0
+    content: 
+  - emotion: 0
+    content: 
+  - emotion: 0
+    content: 
