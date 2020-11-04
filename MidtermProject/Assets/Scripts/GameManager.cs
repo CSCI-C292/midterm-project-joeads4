@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
 
     public Button brewButton;
 
+    public GameObject EndGame;
+
     public Customer.ChatLine[] currentChatLine;
 
     private void Start()
@@ -96,8 +98,13 @@ public class GameManager : MonoBehaviour
         {
             if (completed == 2)
             {
-               speakerNum = speakerNum + 1;
-               completed = 0;
+                if (speakerNum <= 1)
+                {
+                    speakerNum = speakerNum + 1;
+                    
+                }
+
+                completed = 0;
 
                 currentCustomer = Customers[speakerNum];
                 currentRecipe = Customers[speakerNum].favoriteRecipe;
@@ -110,10 +117,27 @@ public class GameManager : MonoBehaviour
                 Mocha.SetActive(false);
                 Unknown.SetActive(false);
 
-
+                
                 dialogueUI.SetActive(true);
 
+                if (currSprite = null)
+                {
+                    if(speakerNum == 2)
+                    {
+                        EndGame.gameObject.SetActive(true);
+                    }
+                    
+                }
+
+               
+
+                if (speakerNum <= 1)
+                {
+                    spriteDisplay.sprite = currSprite;
+                }
+
                 
+
             }
         }
 
@@ -315,6 +339,7 @@ public class GameManager : MonoBehaviour
         currentEmotion = GetPose(lineNum);
 
         DisplayImages();
+        dialogueUI.SetActive(true);
     }
     void UpdateUI()
     {
