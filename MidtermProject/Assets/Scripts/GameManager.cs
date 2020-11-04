@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
+
 public class GameManager : MonoBehaviour
 {
     public Customer[] Customers;
@@ -37,12 +38,15 @@ public class GameManager : MonoBehaviour
 
     public int speakerNum;
 
+    public int completed;
+
     public Customer.ChatLine[] currentChatLine;
 
     private void Start()
 
     {
         speakerNum = 0;
+        completed = 0;
 
         currentCustomer = Customers[speakerNum];
         currentRecipe = Customers[speakerNum].favoriteRecipe;
@@ -55,9 +59,12 @@ public class GameManager : MonoBehaviour
         currentChatLine = currentCustomer.chatLines;
 
         ShowDialogue();
+
+        Shuffle(Customers);
     }
 
-    private void Update()
+
+        private void Update()
     {
         if (lineNum == 0)
         {
@@ -72,6 +79,33 @@ public class GameManager : MonoBehaviour
                 ContinueDialogue();
             }
         }
+
+        if (!dialogueUI.activeSelf)
+        {
+            if (completed == 2)
+            {
+               speakerNum = speakerNum + 1;
+               completed = 0;
+                currentChatLine = currentCustomer.chatLines;
+
+                ChaiLatte.SetActive(false);
+                CocoaTea.SetActive(false);
+                Mocha.SetActive(false);
+                Unknown.SetActive(false);
+
+
+                dialogueUI.SetActive(true);
+            }
+        }
+        
+
+        currentCustomer = Customers[speakerNum];
+        currentRecipe = Customers[speakerNum].favoriteRecipe;
+    }
+
+    public void TriggerDialogue()
+    {
+       
     }
 
     void ShowDialogue()
@@ -100,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     void CheckRecipe()
     {
-
+        Debug.Log("Speaker Number: " + speakerNum);
         for (int i = 0; i < CurrentMixIngredients.Count; i++)
         {
             if (CurrentMixIngredients[i] == currentRecipe.RecipeIngredients[i])
@@ -126,6 +160,7 @@ public class GameManager : MonoBehaviour
                         break;
                 }
                dialogueUI.SetActive(true);
+                
             }
 
             else
@@ -138,11 +173,14 @@ public class GameManager : MonoBehaviour
                 ShowDialogue();
 
                 Unknown.gameObject.SetActive(true);
+                
             }
 
 
         }
- 
+        
+        
+        
     }
 
 
@@ -249,10 +287,12 @@ public class GameManager : MonoBehaviour
         if (dialogue == "")
         {
             dialogueUI.gameObject.SetActive(false);
+            completed++;
 
             //textBox.gameObject.SetActive(false);
 
             //Array.Clear(currentCustomer.chatLines, 0, currentCustomer.chatLines.Length);
+            Debug.Log("Speaker Number: " + speakerNum);
 
             ResetLineNum();
         }

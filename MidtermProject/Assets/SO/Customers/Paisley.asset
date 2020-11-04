@@ -23,3 +23,29 @@ MonoBehaviour:
     content: dhg
   - emotion: 0
     content: yytr
+  - emotion: 0
+    content: yytr
+  - emotion: 0
+    content: yytr
+  positiveLines:
+  - emotion: 0
+    content: adsf
+  - emotion: 2
+    content: feere
+  - emotion: 1
+    content: we
+  - emotion: 0
+    content: df
+  - emotion: 1
+    content: fe
+  negativeLines:
+  - emotion: 1
+    content: efa
+  - emotion: 0
+    content: dfse
+  - emotion: 2
+    content: we
+  - emotion: 1
+    content: ef
+  - emotion: 0
+    content: ae

@@ -27,3 +27,25 @@ MonoBehaviour:
     content: werf
   - emotion: 0
     content: wef
+  positiveLines:
+  - emotion: 0
+    content: adf
+  - emotion: 0
+    content: afd
+  - emotion: 0
+    content: re
+  - emotion: 0
+    content: fes
+  - emotion: 0
+    content: fds
+  negativeLines:
+  - emotion: 0
+    content: fesea
+  - emotion: 0
+    content: ea
+  - emotion: 0
+    content: ef
+  - emotion: 0
+    content: eaf
+  - emotion: 0
+    content: fea
