@@ -7,22 +7,23 @@ using UnityEngine;
 public class Customer : ScriptableObject
 {
 
-    public Texture2D HappySprite;
-    public Texture2D SadSprite;
-    public Texture2D NeutralSprite;
+    public Sprite HappySprite;
+    public Sprite SadSprite;
+    public Sprite NeutralSprite;
 
     public Recipe favoriteRecipe;
 
-    public ChatLine[] ChatLines;
+    public ChatLine[] chatLines;
 
     [System.Serializable]
     public struct ChatLine
     {
         public Emotion emotion;
+        public string content;
+        
 
-        public string text;
     }
 
-
     public enum Emotion { HAPPY, SAD, NEUTRAL }
+
 }

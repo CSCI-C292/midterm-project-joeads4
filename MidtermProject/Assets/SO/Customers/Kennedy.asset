@@ -16,20 +16,14 @@ MonoBehaviour:
   SadSprite: {fileID: 2800000, guid: e4909739a9a851340927e7b8cb4c27d6, type: 3}
   NeutralSprite: {fileID: 2800000, guid: d7b472e71da490d4abd90f478f6880a9, type: 3}
   favoriteRecipe: {fileID: 11400000, guid: 8fb05dd1be0ef8e42bf5ed3b4b954a10, type: 2}
-  ChatLines:
+  chatLines:
   - emotion: 0
-    text: "Aaaaaah!!!! I\u2019m so excited! "
+    content: hello
   - emotion: 0
-    text: I heard you were opening today, so I just had to stop by!
-  - emotion: 2
-    text: "I\u2019m Kennedy, by the way!"
-  - emotion: 2
-    text: Could you make me a Mocha? I loooooove chocolate!
-  - emotion: 2
-    text: Have you ever had one?
-  - emotion: 2
-    text: "Oh, I\u2019m sure you have, you own the place!"
+    content: line 2
   - emotion: 0
-    text: Mocha, mocha, mocha, is there anything more perfect?
+    content: line 3
   - emotion: 0
-    text: Coffee, chocolate, and milk, a match made in heaven!
+    content: line 4
+  - emotion: 0
+    content: done

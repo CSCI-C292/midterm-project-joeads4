@@ -135,17 +135,17 @@ public class DialogueHandler : MonoBehaviour
             switch (parser.currentSpeakerEmotion)
             {
                 case "H":
-                    currSprite.sprite = character.GetComponent<Character>().characterPoses[0];
+                    //currSprite.sprite = character.GetComponent<Character>().characterPoses[0];
                     Debug.Log("Happy");
                     break;
 
                 case "S":
-                    currSprite.sprite = character.GetComponent<Character>().characterPoses[1];
+                    //currSprite.sprite = character.GetComponent<Character>().characterPoses[1];
                     Debug.Log("Sad");
                     break;
 
                 case "N":
-                    currSprite.sprite = character.GetComponent<Character>().characterPoses[2];
+                    //currSprite.sprite = character.GetComponent<Character>().characterPoses[2];
                     Debug.Log("Neutral");
                     break;
             }
