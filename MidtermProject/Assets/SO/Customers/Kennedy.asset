@@ -18,12 +18,12 @@ MonoBehaviour:
   favoriteRecipe: {fileID: 11400000, guid: 8fb05dd1be0ef8e42bf5ed3b4b954a10, type: 2}
   chatLines:
   - emotion: 0
-    content: hello
-  - emotion: 1
-    content: line 2
-  - emotion: 2
-    content: line 3
-  - emotion: 1
-    content: line 4
+    content: asdf
   - emotion: 0
-    content: done
+    content: wef
+  - emotion: 0
+    content: ewrq
+  - emotion: 0
+    content: adf
+  - emotion: 0
+    content: er

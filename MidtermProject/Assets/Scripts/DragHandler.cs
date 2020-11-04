@@ -10,31 +10,44 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
 
     public static GameObject item; //item being dragged
+    public GameObject dialogueUI;
 
     Vector2 startPosition;
     Transform startParent;
     public static bool begindragging = false;
 
 
+    private void Update()
+    {
+        
+    }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!dialogueUI.activeSelf)
+        {
+            item = gameObject;
+            startPosition = transform.position;
+            startParent = transform.parent;
+            GetComponent<CanvasGroup>().blocksRaycasts = false;
+            begindragging = true;
+            transform.SetParent(transform.root);
+        }
 
-        item = gameObject;
-        startPosition = transform.position;
-        startParent = transform.parent;
-        GetComponent<CanvasGroup>().blocksRaycasts = false;
-        begindragging = true;
-        transform.SetParent(transform.root);
+        
 
     }
 
     public void OnDrag(PointerEventData eventData) //dragging item follows mouse
     {
+        if (!dialogueUI.activeSelf)
+        {
+            //icons follow the mouse position in real time
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = mousePos;
+        }
 
-        //icons follow the mouse position in real time
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousePos;
+        
         
 
     }
@@ -43,14 +56,19 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData) //sets char blocks back to starting position if not on a slot
     {
-        item = null;
-
-        if (transform.parent == startParent || transform.parent == transform.root)
+        if (!dialogueUI.activeSelf)
         {
-            transform.position = startPosition;
-            transform.SetParent(startParent);
-        }
+            item = null;
 
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+            if (transform.parent == startParent || transform.parent == transform.root)
+            {
+                transform.position = startPosition;
+                transform.SetParent(startParent);
+            }
+
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
+        }
+        
+        
     }
 }

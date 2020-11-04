@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,12 +37,16 @@ public class GameManager : MonoBehaviour
 
     public int lineNum;
 
+    public int speakerNum;
+
 
     private void Start()
 
     {
-        currentCustomer = Customers[1];
-        currentRecipe = Customers[1].favoriteRecipe;
+        speakerNum = 0;
+
+        currentCustomer = Customers[speakerNum];
+        currentRecipe = Customers[speakerNum].favoriteRecipe;
         //(CurrentCustomer.ChatLine[currentIndex].emotion) {
         //case Emotion.HAPPY:
         // load CurrentCustomer.HappyGraphic into customer UI graphic
@@ -61,7 +66,7 @@ public class GameManager : MonoBehaviour
             lineNum++;
         }
 
-        if (dialogueUI == true)
+        if (dialogueUI.activeSelf)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -235,11 +240,11 @@ public class GameManager : MonoBehaviour
     {
         if (dialogue == "")
         {
-            //dialogueUI.gameObject.SetActive(false);
+            dialogueUI.gameObject.SetActive(false);
 
-            textBox.gameObject.SetActive(false);
+            //textBox.gameObject.SetActive(false);
 
-            
+            //Array.Clear(currentCustomer.chatLines, 0, currentCustomer.chatLines.Length);
 
             ResetLineNum();
         }

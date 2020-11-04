@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656fac27066a2e499d57baec8d8ae91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 904993777}
 --- !u!225 &26767334
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -337,6 +338,7 @@ MonoBehaviour:
   CurrentMixIngredients: []
   currentRecipe: {fileID: 0}
   currentCustomer: {fileID: 0}
+  currentEmotion: 
   dialogueUI: {fileID: 904993777}
   textBox: {fileID: 1032755039}
   Mocha: {fileID: 1456840454}
@@ -348,6 +350,7 @@ MonoBehaviour:
   dialogueText: {fileID: 376471761}
   dialogue: 
   lineNum: 0
+  speakerNum: 0
 --- !u!4 &143954057
 Transform:
   m_ObjectHideFlags: 0
@@ -1575,6 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656fac27066a2e499d57baec8d8ae91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 904993777}
 --- !u!225 &897267970
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1751,6 +1755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656fac27066a2e499d57baec8d8ae91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 904993777}
 --- !u!225 &1008515642
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2767,6 +2772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b656fac27066a2e499d57baec8d8ae91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 904993777}
 --- !u!225 &1671229127
 CanvasGroup:
   m_ObjectHideFlags: 0
