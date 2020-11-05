@@ -13,9 +13,15 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public GameObject dialogueUI;
 
     Vector2 startPosition;
-    Transform startParent;
-    public static bool begindragging = false;  
+    public Transform startParent;
+    public static bool begindragging = false;
 
+
+    private void Start()
+    {
+        startPosition = transform.position;
+        startParent = transform.parent;
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         item = gameObject;
@@ -42,20 +48,18 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (transform.parent == startParent || transform.parent == transform.root)
         {
             transform.position = startPosition;
-            //transform.SetParent(startParent);
+            transform.SetParent(startParent);
         }
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
     }
 
-    //public void Reset()
-    //{
-    //    if (transform.parent != startParent)
-    //    {
-    //        transform.position = startPosition;
-    //        transform.SetParent(startParent);
-    //    }
-    //    GetComponent<CanvasGroup>().blocksRaycasts = true;
-    //}
+    public void Reset()
+    {
+        transform.position = startPosition;
+        transform.SetParent(startParent);
+
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
 }
