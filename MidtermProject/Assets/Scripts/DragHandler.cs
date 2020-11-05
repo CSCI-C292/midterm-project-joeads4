@@ -14,10 +14,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     Vector2 startPosition;
     Transform startParent;
-    public static bool begindragging = false;
-
-
-    
+    public static bool begindragging = false;  
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -36,7 +33,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         transform.position = mousePos;
 
     }
-
 
 
     public void OnEndDrag(PointerEventData eventData) //sets char blocks back to starting position if not on a slot

@@ -32,17 +32,13 @@ public class GameManager : MonoBehaviour
 
 
     public Sprite currSprite;
-
     public SpriteRenderer spriteDisplay;
 
     public TMP_Text dialogueText;
 
     public string dialogue;
-
     public int lineNum;
-
     public int speakerNum;
-
     public int completed;
 
     public Button brewButton;
@@ -52,19 +48,12 @@ public class GameManager : MonoBehaviour
     public Customer.ChatLine[] currentChatLine;
 
     private void Start()
-
     {
-
-        
-
         speakerNum = 0;
         completed = 0;
 
         currentCustomer = Customers[speakerNum];
         currentRecipe = Customers[speakerNum].favoriteRecipe;
-        //(CurrentCustomer.ChatLine[currentIndex].emotion) {
-        //case Emotion.HAPPY:
-        // load CurrentCustomer.HappyGraphic into customer UI graphic
 
         lineNum = 0;
 
@@ -80,17 +69,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     private void Update()
     {
-        
 
         if (dialogueUI.activeSelf)
         {
             brewButton.gameObject.SetActive(false);
-
-            
-
 
             if (Input.GetKeyDown("space"))
             {
@@ -122,10 +106,6 @@ public class GameManager : MonoBehaviour
 
                 completed = 0;
 
-                //
-
-                //
-
                 if (speakerNum <= 1)
                 {
                     
@@ -133,20 +113,15 @@ public class GameManager : MonoBehaviour
                     spriteDisplay.sprite = null;
 
                     StartCoroutine(NewCustomerEnter());
-
                 }
 
                 ChaiLatte.SetActive(false);
                 CocoaTea.SetActive(false);
                 Mocha.SetActive(false);
                 Unknown.SetActive(false);
-
-                
-
             }
         }
-  
-        
+
     }
 
     private IEnumerator NewCustomerEnter()
@@ -166,7 +141,7 @@ public class GameManager : MonoBehaviour
 
     void ShowDialogue()
     {
-        //
+        
         ParseLine();
         UpdateUI();
     }
@@ -184,8 +159,6 @@ public class GameManager : MonoBehaviour
         }
 
         CheckRecipe();
-
-
     }
 
     void CheckRecipe()
@@ -266,7 +239,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-
     }
 
     public string GetContent(int lineNumber)
@@ -303,7 +275,6 @@ public class GameManager : MonoBehaviour
         dialogueText.text = dialogue;
     }
 
-
     public void ContinueDialogue()
     {
         ShowDialogue();
@@ -324,7 +295,6 @@ public class GameManager : MonoBehaviour
         spriteDisplay.sprite = null;
 
     }
-
 
     public void ResetLineNum()
     {
