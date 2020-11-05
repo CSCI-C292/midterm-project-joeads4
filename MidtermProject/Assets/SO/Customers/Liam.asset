@@ -53,7 +53,7 @@ MonoBehaviour:
     content: 
   negativeLines:
   - emotion: 1
-    content: "Oh\u2026"
+    content: Oh...
   - emotion: 1
     content: "Maybe I\u2019ll just stick with the diner..."
   - emotion: 0

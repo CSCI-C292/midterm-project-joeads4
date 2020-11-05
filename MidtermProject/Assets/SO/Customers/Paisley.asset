@@ -54,9 +54,9 @@ MonoBehaviour:
     content: 
   negativeLines:
   - emotion: 1
-    content: "\u2026"
+    content: '...'
   - emotion: 1
-    content: "It\u2019s\u2026.um. You tried your best.."
+    content: "It\u2019s...um. You tried your best..."
   - emotion: 1
     content: Maybe my mom can give you some pointers...
   - emotion: 1
