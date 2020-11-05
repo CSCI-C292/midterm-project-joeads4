@@ -33,7 +33,7 @@ MonoBehaviour:
   - emotion: 0
     content: Mocha, mocha, mocha, is there anything more perfect?
   - emotion: 0
-    content: Coffee, chocolate, and milk, a match made in heaven!
+    content: 
   positiveLines:
   - emotion: 0
     content: "Omg!!! You\u2019re the best!"

@@ -15,6 +15,7 @@ MonoBehaviour:
   HappySprite: {fileID: 21300000, guid: d014d53a0e1e629448d6684c3fdf303a, type: 3}
   SadSprite: {fileID: 21300000, guid: 27828306df0f4f740a65ebb53e8665d3, type: 3}
   NeutralSprite: {fileID: 21300000, guid: 26dc71625bd319346b74a63e79c27839, type: 3}
+  EmptySprite: {fileID: 0}
   favoriteRecipe: {fileID: 11400000, guid: 8c6f61c6c946e084f8571fa4d3b192ac, type: 2}
   chatLines:
   - emotion: 2
@@ -29,11 +30,10 @@ MonoBehaviour:
     content: "It\u2019ll be nice to have something other than just burnt black coffee."
   - emotion: 2
     content: Can I get a Chai Latte?
+  - emotion: 2
+    content: Regular lattes with just coffee don't cut it for me.
   - emotion: 0
-    content: "I never would\u2019ve thought coffee, tea, and milk would taste good,
-      but it\u2019s become my favorite!"
-  - emotion: 0
-    content: 
+    content: That extra kick from the tea really makes it amazing!
   positiveLines:
   - emotion: 0
     content: Finally, some good bean juice!
