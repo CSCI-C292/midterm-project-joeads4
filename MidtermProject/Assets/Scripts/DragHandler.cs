@@ -53,13 +53,13 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     }
 
-    public void Reset()
-    {
-        if (transform.parent != startParent)
-        {
-            transform.position = startPosition;
-            transform.SetParent(startParent);
-        }
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
-    }
+    //public void Reset()
+    //{
+    //    if (transform.parent != startParent)
+    //    {
+    //        transform.position = startPosition;
+    //        transform.SetParent(startParent);
+    //    }
+    //    GetComponent<CanvasGroup>().blocksRaycasts = true;
+    //}
 }

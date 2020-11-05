@@ -84,8 +84,12 @@ public class GameManager : MonoBehaviour
         {
             brewButton.gameObject.SetActive(false);
 
+            
+
+
             if (Input.GetKeyDown("space"))
             {
+                
                 ContinueDialogue();
             }
         }
@@ -102,6 +106,11 @@ public class GameManager : MonoBehaviour
 
         if (!dialogueUI.activeSelf)
         {
+            if (Input.GetKeyDown("space"))
+            {
+                return;
+            }
+
             if (completed == 2)
             {
                 lineNum = 0;
@@ -117,10 +126,8 @@ public class GameManager : MonoBehaviour
                     
                     speakerNum = speakerNum + 1;
                     spriteDisplay.sprite = null;
+
                     StartCoroutine(NewCustomerEnter());
-
-                    
-
 
                 }
 
