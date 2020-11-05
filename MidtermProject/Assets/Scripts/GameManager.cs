@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     public int correctDrinks;
     public Text drinkText;
 
+    private bool pause;
     public Customer.ChatLine[] currentChatLine;
 
     private void Start()
@@ -82,15 +83,21 @@ public class GameManager : MonoBehaviour
         {
             brewButton.gameObject.SetActive(false);
 
-            if (Input.GetKeyDown("space"))
+            if (pause == false)
             {
-                
-                ContinueDialogue();
+                if (Input.GetKeyDown("space"))
+                {
+
+                    ContinueDialogue();
+                }
             }
-        }
-        else
-        {
-            brewButton.gameObject.SetActive(true);
+            if (pause == true)
+            {
+
+                brewButton.gameObject.SetActive(false);
+            }
+            
+
         }
 
         if (speakerNum == 2 && completed == 2)
@@ -102,23 +109,26 @@ public class GameManager : MonoBehaviour
 
         if (!dialogueUI.activeSelf)
         {
-            if (Input.GetKeyDown("space"))
+            if (completed == 1)
             {
-                return;
+                brewButton.gameObject.SetActive(true);
             }
 
             if (completed == 2)
             {
+                
+
                 lineNum = 0;
 
                 completed = 0;
+                
 
                 if (speakerNum <= 1)
                 {
                     
                     speakerNum = speakerNum + 1;
                     spriteDisplay.sprite = null;
-
+                    
                     StartCoroutine(NewCustomerEnter());
                 }
 
@@ -134,17 +144,23 @@ public class GameManager : MonoBehaviour
     private IEnumerator NewCustomerEnter()
     {
         yield return new WaitForSeconds(5);
-
+       
         otherSource.Play();
         currentCustomer = Customers[speakerNum];
         currentRecipe = Customers[speakerNum].favoriteRecipe;
+        pause = false;
         currentChatLine = currentCustomer.chatLines;
+
+        
+
+
         if (lineNum == 0)
         {
             ShowDialogue();
             lineNum++;
 
         }
+
     }
 
     void ShowDialogue()
@@ -162,6 +178,7 @@ public class GameManager : MonoBehaviour
             if (item)
             {
                 CurrentMixIngredients.Add(item.GetComponent<IngredientDisplay>().ingredient);
+
                 //Debug.Log(CurrentMixIngredients);
             }
         }
