@@ -6,6 +6,7 @@ using TMPro;
 using System;
 using UnityEngine.UI;
 
+
 public class GameManager : MonoBehaviour
 {
     public Customer[] Customers;
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
     public Sprite currSprite;
     public SpriteRenderer spriteDisplay;
 
-    public TMP_Text dialogueText;
+    public Text dialogueText;
 
     public string dialogue;
     public int lineNum;
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
         {
             spriteDisplay.sprite = null;
             EndGame.SetActive(true);
-            drinkText.text = "You correctly made " + correctDrinks + " drinks!";
+            drinkText.text = "You correctly made " + correctDrinks + " drink(s)!";
         }
 
         if (!dialogueUI.activeSelf)
