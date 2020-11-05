@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         {
             brewButton.gameObject.SetActive(false);
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown("space"))
             {
                 ContinueDialogue();
             }
