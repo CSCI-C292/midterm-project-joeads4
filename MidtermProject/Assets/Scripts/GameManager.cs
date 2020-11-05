@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     public Text cocoaPage;
     public Text mochaPage;
 
-
     public Sprite currSprite;
     public SpriteRenderer spriteDisplay;
 
@@ -45,12 +44,19 @@ public class GameManager : MonoBehaviour
 
     public GameObject EndGame;
 
+    public AudioSource audioSource;
+    public AudioSource otherSource;
+
+    public int correctDrinks;
+    public Text drinkText;
+
     public Customer.ChatLine[] currentChatLine;
 
     private void Start()
     {
         speakerNum = 0;
         completed = 0;
+        correctDrinks = 0;
 
         currentCustomer = Customers[speakerNum];
         currentRecipe = Customers[speakerNum].favoriteRecipe;
@@ -91,6 +97,7 @@ public class GameManager : MonoBehaviour
         {
             spriteDisplay.sprite = null;
             EndGame.SetActive(true);
+            drinkText.text = "You correctly made " + correctDrinks + " drinks!";
         }
 
         if (!dialogueUI.activeSelf)
@@ -127,7 +134,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator NewCustomerEnter()
     {
         yield return new WaitForSeconds(5);
-        //play jingle sound
+
+        otherSource.Play();
         currentCustomer = Customers[speakerNum];
         currentRecipe = Customers[speakerNum].favoriteRecipe;
         currentChatLine = currentCustomer.chatLines;
@@ -188,7 +196,7 @@ public class GameManager : MonoBehaviour
                     mochaPage.text = "Mocha";
                     break;
             }
-            //play positive sound
+            correctDrinks++;
         }
         else
         {
@@ -199,10 +207,9 @@ public class GameManager : MonoBehaviour
 
             Unknown.gameObject.SetActive(true);
 
-            //play negative sond
         }
 
-
+        audioSource.Play();
         dialogueUI.SetActive(true);
         ShowDialogue();
 
