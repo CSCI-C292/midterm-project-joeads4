@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
+
         if (dialogueUI.activeSelf)
         {
             brewButton.gameObject.SetActive(false);
@@ -186,8 +187,11 @@ public class GameManager : MonoBehaviour
         CheckRecipe();
     }
 
-    void CheckRecipe()
+   
+
+    public void CheckRecipe()
     {
+
         bool isEqual = Enumerable.SequenceEqual(CurrentMixIngredients, currentRecipe.RecipeIngredients);
         if (isEqual)
         {
@@ -200,7 +204,7 @@ public class GameManager : MonoBehaviour
                 case "Chai Latte":
                     ChaiLatte.gameObject.SetActive(true);
                     chaiPage.text = "Chai Latte";
-                        
+
                     break;
 
                 case "Cocoa Tea":

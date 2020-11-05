@@ -12,6 +12,8 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public static GameObject item; //item being dragged
     public GameObject dialogueUI;
 
+    public GameManager gm;
+
     Vector2 startPosition;
     public Transform startParent;
     public static bool begindragging = false;
@@ -57,6 +59,10 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void Reset()
     {
+        if (gm.CurrentMixIngredients.Count == 0)
+        {
+            return;
+        }
         transform.position = startPosition;
         transform.SetParent(startParent);
 
