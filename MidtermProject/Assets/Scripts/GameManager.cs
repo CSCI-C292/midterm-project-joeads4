@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+        
 
         if (dialogueUI.activeSelf)
         {
@@ -94,23 +94,35 @@ public class GameManager : MonoBehaviour
             brewButton.gameObject.SetActive(true);
         }
 
+        if (speakerNum == 2 && completed == 2)
+        {
+            spriteDisplay.sprite = null;
+            EndGame.SetActive(true);
+        }
+
         if (!dialogueUI.activeSelf)
         {
             if (completed == 2)
             {
-                if (speakerNum <= 1)
-                {
-                    speakerNum = speakerNum + 1;
-                    
-                }
+                lineNum = 0;
 
                 completed = 0;
 
-                currentCustomer = Customers[speakerNum];
-                currentRecipe = Customers[speakerNum].favoriteRecipe;
+                //
 
-                currentChatLine = currentCustomer.chatLines;
-                lineNum = 0;
+                //
+
+                if (speakerNum <= 1)
+                {
+                    
+                    speakerNum = speakerNum + 1;
+                    spriteDisplay.sprite = null;
+                    StartCoroutine(NewCustomerEnter());
+
+                    
+
+
+                }
 
                 ChaiLatte.SetActive(false);
                 CocoaTea.SetActive(false);
@@ -118,36 +130,25 @@ public class GameManager : MonoBehaviour
                 Unknown.SetActive(false);
 
                 
-                dialogueUI.SetActive(true);
-
-                if (currSprite = null)
-                {
-                    if(speakerNum == 2)
-                    {
-                        EndGame.gameObject.SetActive(true);
-                    }
-                    
-                }
-
-               
-
-                if (speakerNum <= 1)
-                {
-                    spriteDisplay.sprite = currSprite;
-                }
-
-                
 
             }
         }
-
-        
+  
         
     }
 
-    public void TriggerDialogue()
+    private IEnumerator NewCustomerEnter()
     {
-       
+        yield return new WaitForSeconds(5);
+        currentCustomer = Customers[speakerNum];
+        currentRecipe = Customers[speakerNum].favoriteRecipe;
+        currentChatLine = currentCustomer.chatLines;
+        if (lineNum == 0)
+        {
+            ShowDialogue();
+            lineNum++;
+
+        }
     }
 
     void ShowDialogue()
@@ -183,8 +184,6 @@ public class GameManager : MonoBehaviour
             currentChatLine = currentCustomer.positiveLines;
             dialogue = currentChatLine[lineNum].content;
 
-            //ShowDialogue();
-
             switch (currentRecipe.recipeName)
             {
                 case "Chai Latte":
@@ -199,7 +198,7 @@ public class GameManager : MonoBehaviour
                     Mocha.gameObject.SetActive(true);
                     break;
             }
-            //dialogueUI.SetActive(true);
+
         }
         else
         {
@@ -207,56 +206,11 @@ public class GameManager : MonoBehaviour
 
             currentChatLine = currentCustomer.negativeLines;
             dialogue = currentChatLine[lineNum].content;
-            //dialogueUI.SetActive(true);
-            //ShowDialogue();
+
 
             Unknown.gameObject.SetActive(true);
         }
 
-        //Debug.Log("Speaker Number: " + speakerNum);
-        //for (int i = 0; i < CurrentMixIngredients.Count; i++)
-        //{
-        //    if (CurrentMixIngredients[i] == currentRecipe.RecipeIngredients[i])
-        //    {
-        //        Debug.Log("You made a " + currentRecipe.recipeName + "!");
-        //        currentChatLine = currentCustomer.positiveLines;
-        //        dialogue = currentChatLine[lineNum].content;
-
-        //        //ShowDialogue();
-
-        //        switch (currentRecipe.recipeName)
-        //        {
-        //            case "Chai Latte":
-        //                ChaiLatte.gameObject.SetActive(true);
-        //                break;
-
-        //            case "Cocoa Tea":
-        //                CocoaTea.gameObject.SetActive(true);
-        //                break;
-
-        //            case "Mocha":
-        //                Mocha.gameObject.SetActive(true);
-        //                break;
-        //        }
-        //       //dialogueUI.SetActive(true);
-
-        //    }
-
-        //    if (CurrentMixIngredients[i] != currentRecipe.RecipeIngredients[i])
-        //    {
-        //        Debug.Log("You made an unknown drink!");
-
-        //        currentChatLine = currentCustomer.negativeLines;
-        //        dialogue = currentChatLine[lineNum].content;
-        //        //dialogueUI.SetActive(true);
-        //        //ShowDialogue();
-
-        //        Unknown.gameObject.SetActive(true);
-
-        //    }
-
-
-        //}
 
         dialogueUI.SetActive(true);
         ShowDialogue();
@@ -266,7 +220,6 @@ public class GameManager : MonoBehaviour
 
     void DisplayImages()
     {
-
 
         if (currentEmotion != "")
 
@@ -297,20 +250,6 @@ public class GameManager : MonoBehaviour
 
 
     }
-    //private void ReadLines()
-    //{
-    //    //currSprite = spriteDisplay;
-    //    for (int i = 0; i < currentCustomer.chatLines.Length; i++)
-    //    {
-
-    //        //dialogue = currentCustomer.chatLines[i].content;
-    //        Debug.Log("dialogue: " + dialogue);
-
-            
-    //    }
-
-
-    //}
 
     public string GetContent(int lineNumber)
     {
@@ -362,6 +301,13 @@ public class GameManager : MonoBehaviour
         CurrentMixIngredients.Clear();
     }
 
+    public void ResetImages()
+    {
+        spriteDisplay.sprite = null;
+
+    }
+
+
     public void ResetLineNum()
     {
         lineNum = 0;
@@ -380,6 +326,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Speaker Number: " + speakerNum);
 
             ResetLineNum();
+            //ResetImages();
 
             ClearList();
         }

@@ -15,6 +15,7 @@ MonoBehaviour:
   HappySprite: {fileID: 21300000, guid: 9bed240ad38a1d94ca13437e0468f47f, type: 3}
   SadSprite: {fileID: 21300000, guid: e4909739a9a851340927e7b8cb4c27d6, type: 3}
   NeutralSprite: {fileID: 21300000, guid: d7b472e71da490d4abd90f478f6880a9, type: 3}
+  EmptySprite: {fileID: 0}
   favoriteRecipe: {fileID: 11400000, guid: 8fb05dd1be0ef8e42bf5ed3b4b954a10, type: 2}
   chatLines:
   - emotion: 0
@@ -38,32 +39,8 @@ MonoBehaviour:
     content: "Omg!!! You\u2019re the best!"
   - emotion: 0
     content: "I\u2019m going to have to stop by for one of these everyday!!!"
-  - emotion: 0
-    content: 
-  - emotion: 0
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
   negativeLines:
   - emotion: 1
     content: Ewww!
   - emotion: 1
     content: Not enough chocolate in the world could make this better.
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
-  - emotion: 1
-    content: 
