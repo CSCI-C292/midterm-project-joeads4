@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     public GameObject CocoaTea;
     public GameObject Unknown;
 
+    public Text chaiPage;
+    public Text cocoaPage;
+    public Text mochaPage;
+
+
     public Sprite currSprite;
 
     public SpriteRenderer spriteDisplay;
@@ -147,6 +152,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator NewCustomerEnter()
     {
         yield return new WaitForSeconds(5);
+        //play jingle sound
         currentCustomer = Customers[speakerNum];
         currentRecipe = Customers[speakerNum].favoriteRecipe;
         currentChatLine = currentCustomer.chatLines;
@@ -195,17 +201,21 @@ public class GameManager : MonoBehaviour
             {
                 case "Chai Latte":
                     ChaiLatte.gameObject.SetActive(true);
+                    chaiPage.text = "Chai Latte";
+                        
                     break;
 
                 case "Cocoa Tea":
                     CocoaTea.gameObject.SetActive(true);
+                    cocoaPage.text = "Cocoa Tea";
                     break;
 
                 case "Mocha":
                     Mocha.gameObject.SetActive(true);
+                    mochaPage.text = "Mocha";
                     break;
             }
-
+            //play positive sound
         }
         else
         {
@@ -214,8 +224,9 @@ public class GameManager : MonoBehaviour
             currentChatLine = currentCustomer.negativeLines;
             dialogue = currentChatLine[lineNum].content;
 
-
             Unknown.gameObject.SetActive(true);
+
+            //play negative sond
         }
 
 
