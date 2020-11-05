@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//part of this script was written for me by Chabane Maidi
+
 
 [CreateAssetMenu(fileName = "New Customer", menuName = "Customer")]
 public class Customer : ScriptableObject
